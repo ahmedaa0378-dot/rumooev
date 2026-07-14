@@ -1,0 +1,267 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --focus-ring: #16a34a;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    @apply bg-paper font-sans text-slate-text antialiased;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+
+  /* Headlines use Poppins via the display family. */
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-ink;
+    text-wrap: balance;
+  }
+
+  /* Visible keyboard focus on every interactive element (DESIGN.md §9). */
+  :focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Consistent selection color. */
+  ::selection {
+    background: #dcfce7;
+    color: #0a0f0c;
+  }
+}
+
+@layer components {
+  /* Standard content container: 1200px max, responsive side padding. */
+  .container-x {
+    @apply mx-auto w-full max-w-content px-6 md:px-8 lg:px-12;
+  }
+
+  /* Section vertical rhythm (DESIGN.md §4: 112px desktop / 64px mobile). */
+  .section-y {
+    @apply py-16 md:py-28;
+  }
+
+  /* Eyebrow label — Inter 600, 13px, uppercase, +0.08em, brand-green. */
+  .eyebrow {
+    @apply font-sans text-eyebrow font-semibold uppercase tracking-[0.08em] text-brand-green;
+  }
+
+  /* Alternate section theme: soft green wash + a faint electric-green glow
+     bleeding from the top edge (Theme option C). Replaces the old cool `mist`
+     on alternating sections. The ::before sits above the fill but behind
+     content via the isolated stacking context. */
+  .section-soft {
+    position: relative;
+    isolation: isolate;
+    background-color: #ebf7ef;
+  }
+  .section-soft::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: radial-gradient(60% 55% at 50% -6%, rgba(22, 163, 74, 0.16), transparent 70%);
+  }
+}
+
+@layer utilities {
+  /* Global reduced-motion guard: kill transforms/animation, keep it instant. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* =========================================================================
+   Aurora rising light-beam hero background
+   Consumed by components/ui/aurora-section-hero.tsx. Kept as plain CSS (no
+   CSS-in-JS) and scoped under `.scene` so the neon palette never leaks into
+   the rest of the white-dominant site.
+   ========================================================================= */
+
+@keyframes rise {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+}
+
+@keyframes fade {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  5%,
+  80% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes floorGlow {
+  0%,
+  100% {
+    transform: translateX(-50%) scale(0.9);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateX(-50%) scale(1.1);
+    opacity: 1;
+  }
+}
+
+@keyframes mainGlow {
+  from {
+    opacity: 0.55;
+    filter: blur(25px);
+  }
+  to {
+    opacity: 0.8;
+    filter: blur(15px);
+  }
+}
+
+@keyframes moveGrid {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -80px -40px;
+  }
+}
+
+.scene {
+  /* Middle ground: literal-reference layout + intensity, but the brand green
+     (#16A34A family) instead of the harsh neon #00ff7f. */
+  --bg-color: #030d08;
+  --light-color: #16a34a;
+  --glow-color-1: rgba(22, 163, 74, 0.85);
+  --glow-color-2: rgba(34, 197, 94, 0.55);
+  --grid-line: rgba(22, 163, 74, 0.14);
+
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse at 50% 118%, rgba(22, 163, 74, 0.14), transparent 62%),
+    var(--bg-color);
+}
+
+/* Receding, animated perspective grid floor. */
+.scene .floor {
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  width: 260%;
+  height: 46vh;
+  transform: translateX(-50%) perspective(340px) rotateX(62deg);
+  transform-origin: bottom center;
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 80px 40px;
+  animation: moveGrid 3s linear infinite;
+  -webkit-mask-image: linear-gradient(to top, #000 0%, transparent 72%);
+  mask-image: linear-gradient(to top, #000 0%, transparent 72%);
+}
+
+/* Pulsing glow pooled on the floor. */
+.scene .floor::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 45%;
+  height: 34%;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, var(--glow-color-1), transparent 70%);
+  filter: blur(30px);
+  animation: floorGlow 6s ease-in-out infinite;
+}
+
+/* Central vertical glow column that sits behind the headline. */
+.scene .main-column {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 48%;
+  height: 88%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at 50% 100%,
+    var(--glow-color-1) 0%,
+    var(--glow-color-2) 28%,
+    transparent 68%
+  );
+  filter: blur(20px);
+  opacity: 0.7;
+  animation: mainGlow 5s ease-in-out infinite alternate;
+}
+
+.scene .light-stream-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* One rising beam. left / width / height / timing come from inline styles. */
+.scene .light-beam {
+  position: absolute;
+  bottom: 0;
+  width: 2px;
+  height: 55vh;
+  border-radius: 999px;
+  background: linear-gradient(to top, transparent, var(--light-color) 45%, #dcfce7);
+  box-shadow: 0 0 8px var(--glow-color-2), 0 0 16px var(--glow-color-1);
+  animation-name: rise, fade;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  animation-fill-mode: both, both;
+  will-change: transform, opacity;
+}
+
+/* Respect reduced motion: freeze the scene into a calm static aurora. */
+@media (prefers-reduced-motion: reduce) {
+  .scene .light-beam {
+    animation: none;
+    transform: none;
+    opacity: 0.22;
+  }
+  .scene .floor,
+  .scene .floor::after,
+  .scene .main-column {
+    animation: none;
+  }
+}
