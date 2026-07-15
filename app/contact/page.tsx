@@ -3,17 +3,22 @@ import { Phone, Mail, MapPin } from 'lucide-react';
 import { SectionHeading } from '@/components/SectionHeading';
 import { ContactForm } from '@/components/ContactForm';
 import { Reveal } from '@/components/Reveal';
+import { JsonLd } from '@/components/JsonLd';
 import { SITE } from '@/lib/site';
+import { pageMetadata } from '@/lib/seo';
+import { webPageSchema, breadcrumbSchema, officeSchemas } from '@/lib/schema';
 
-export const metadata: Metadata = {
+const description =
+  'Talk to RumooEV about an EV fleet pilot, pricing or a rider booking. Call or WhatsApp +91 90990 95698, or email business@rumooev.com.';
+
+export const metadata: Metadata = pageMetadata({
   title: 'Contact / Book a Ride',
-  description:
-    "Talk to RumooEV about an EV fleet pilot, pricing or a rider booking. Call or WhatsApp +91 90990 95698, email business@rumooev.com. Offices in Gujarat and Telangana, operations pan-India. We reply within one business day.",
-  openGraph: {
-    title: 'Contact · RumooEV',
-    description: "Tell us about your operation and we'll come back with a plan — usually within one business day.",
-  },
-};
+  description,
+  path: '/contact',
+  ogTitle: 'Contact · RumooEV',
+  ogDescription:
+    "Tell us about your operation and we'll come back with a plan — usually within one business day.",
+});
 
 function WhatsAppGlyph() {
   return (
@@ -25,8 +30,19 @@ function WhatsAppGlyph() {
 
 export default function ContactPage() {
   return (
-    <section className="bg-paper pb-16 pt-28 md:pb-24 md:pt-[150px]">
-      <div className="container-x">
+    <>
+      <JsonLd
+        data={[
+          webPageSchema({ path: '/contact', name: 'Contact / Book a Ride', description }),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Contact', path: '/contact' },
+          ]),
+          ...officeSchemas,
+        ]}
+      />
+      <section className="bg-paper pb-16 pt-28 md:pb-24 md:pt-[150px]">
+        <div className="container-x">
         <Reveal>
           <SectionHeading
             as="h1"
@@ -97,6 +113,7 @@ export default function ContactPage() {
           </Reveal>
         </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 }

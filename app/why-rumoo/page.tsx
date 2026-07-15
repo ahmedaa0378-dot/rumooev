@@ -7,17 +7,21 @@ import { CompareTable, type CompareRow } from '@/components/CompareTable';
 import { Stepper, type Step } from '@/components/Stepper';
 import { Card } from '@/components/Card';
 import { Reveal, RevealGroup, RevealItem } from '@/components/Reveal';
+import { JsonLd } from '@/components/JsonLd';
+import { pageMetadata } from '@/lib/seo';
+import { webPageSchema, breadcrumbSchema } from '@/lib/schema';
 
-export const metadata: Metadata = {
+const description =
+  'Leasing an electric fleet keeps working capital free and costs predictable, includes maintenance — and still ends in 100% ownership. See lease vs buy.';
+
+export const metadata: Metadata = pageMetadata({
   title: 'Why lease instead of buy?',
-  description:
-    'Leasing an electric fleet with RumooEV keeps working capital free, makes costs predictable, includes maintenance and replacements — and still ends in 100% ownership after 24 months. See lease vs buy compared.',
-  openGraph: {
-    title: 'Why Rumoo · Lease vs Buy',
-    description:
-      'Lease smart. Stay agile. Scale faster — and still end up owning the fleet. A clear lease-vs-buy comparison.',
-  },
-};
+  description,
+  path: '/why-rumoo',
+  ogTitle: 'Why Rumoo · Lease vs Buy',
+  ogDescription:
+    'Lease smart. Stay agile. Scale faster — and still end up owning the fleet. A clear lease-vs-buy comparison.',
+});
 
 // WHY-2
 const COMPARE: CompareRow[] = [
@@ -97,6 +101,20 @@ const SUSTAINABILITY = [
 export default function WhyRumooPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          webPageSchema({
+            path: '/why-rumoo',
+            name: 'Why lease instead of buy?',
+            description,
+          }),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Why Rumoo', path: '/why-rumoo' },
+          ]),
+        ]}
+      />
+
       {/* WHY-1 — Hero */}
       <PageHero
         eyebrow="Why Rumoo"

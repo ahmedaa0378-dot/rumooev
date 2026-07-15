@@ -23,8 +23,9 @@ import { ModelCard } from '@/components/ModelCard';
 import { OwnershipRail } from '@/components/OwnershipRail';
 import { Hero } from '@/components/home/Hero';
 import { Reveal, RevealGroup, RevealItem } from '@/components/Reveal';
+import { JsonLd } from '@/components/JsonLd';
 import { IMAGES } from '@/lib/images';
-import { SITE } from '@/lib/site';
+import { organizationSchema, webPageSchema } from '@/lib/schema';
 
 // HOME-5 — What we handle
 const HANDLE = [
@@ -57,36 +58,19 @@ const MILESTONES = [
   'Go-live & support',
 ];
 
-// JSON-LD Organization schema (CLAUDE.md SEO).
-const organizationSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'RumooEV',
-  url: SITE.url,
-  description:
-    'Enterprise EV Fleet Lease-to-Own platform. Businesses lease electric delivery scooters on a 24-month plan, then own the fleet.',
-  email: SITE.email,
-  telephone: '+919099095698',
-  areaServed: 'IN',
-  address: [
-    { '@type': 'PostalAddress', addressRegion: 'Gujarat', addressCountry: 'IN' },
-    { '@type': 'PostalAddress', addressRegion: 'Telangana', addressCountry: 'IN' },
-  ],
-  contactPoint: {
-    '@type': 'ContactPoint',
-    telephone: '+919099095698',
-    contactType: 'sales',
-    email: SITE.email,
-    areaServed: 'IN',
-  },
-};
-
 export default function HomePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      <JsonLd
+        data={[
+          organizationSchema,
+          webPageSchema({
+            path: '/',
+            name: 'RumooEV — Enterprise EV Fleet Lease-to-Own in India',
+            description:
+              'RumooEV: enterprise EV fleet leasing in India on a 24-month Lease-to-Own plan. After 24 months, every scooter belongs to your company. Pan-India.',
+          }),
+        ]}
       />
 
       {/* HOME-1 — Hero (dark) */}

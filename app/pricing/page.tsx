@@ -7,34 +7,34 @@ import { SectionHeading } from '@/components/SectionHeading';
 import { CTABand } from '@/components/CTABand';
 import { Reveal } from '@/components/Reveal';
 import { BUSINESS_FAQ } from '@/lib/faq';
+import { JsonLd } from '@/components/JsonLd';
+import { pageMetadata } from '@/lib/seo';
+import { webPageSchema, breadcrumbSchema, faqPageSchema } from '@/lib/schema';
 
-export const metadata: Metadata = {
+const description =
+  'Transparent per-scooter pricing for RumooEV enterprise EV fleet leasing — six fleet-size tiers on a 24-month Lease-to-Own plan. GST extra.';
+
+export const metadata: Metadata = pageMetadata({
   title: 'Pricing',
-  description:
-    'Transparent per-scooter pricing for RumooEV enterprise EV fleet leasing — six fleet-size tiers on a 24-month Lease-to-Own plan, plus a savings calculator. GST extra; battery swapping optional.',
-  openGraph: {
-    title: 'Pricing · RumooEV',
-    description:
-      'Transparent per-scooter Lease-to-Own pricing that gets better as your fleet grows. See tiers and estimate what leasing frees up.',
-  },
-};
-
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: BUSINESS_FAQ.map((f) => ({
-    '@type': 'Question',
-    name: f.q,
-    acceptedAnswer: { '@type': 'Answer', text: f.a },
-  })),
-};
+  description,
+  path: '/pricing',
+  ogTitle: 'Pricing · RumooEV',
+  ogDescription:
+    'Transparent per-scooter Lease-to-Own pricing that gets better as your fleet grows. See tiers and estimate what leasing frees up.',
+});
 
 export default function PricingPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      <JsonLd
+        data={[
+          webPageSchema({ path: '/pricing', name: 'Pricing', description }),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Pricing', path: '/pricing' },
+          ]),
+          faqPageSchema(BUSINESS_FAQ),
+        ]}
       />
 
       {/* PRC-1 hero + two-audience switcher (Business Lease / Rider comparison) */}

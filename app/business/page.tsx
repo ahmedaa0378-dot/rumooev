@@ -8,17 +8,21 @@ import { Figure } from '@/components/Figure';
 import { BookRideButton } from '@/components/BookRideButton';
 import { Reveal, RevealGroup, RevealItem } from '@/components/Reveal';
 import { IMAGES } from '@/lib/images';
+import { JsonLd } from '@/components/JsonLd';
+import { pageMetadata } from '@/lib/seo';
+import { webPageSchema, breadcrumbSchema, leaseServiceSchema } from '@/lib/schema';
 
-export const metadata: Metadata = {
+const description =
+  "RumooEV's 24-month Lease-to-Own program: a fully managed electric delivery fleet today, a company-owned asset after 24 months. Insurance & upkeep included.";
+
+export const metadata: Metadata = pageMetadata({
   title: 'Enterprise Fleet Leasing (Lease-to-Own)',
-  description:
-    "RumooEV's 24-month Lease-to-Own program gives businesses a fully managed electric delivery fleet today and a company-owned asset after 24 months. Insurance, maintenance, breakdown support and replacements included. Deployed pan-India.",
-  openGraph: {
-    title: 'Enterprise Fleet Leasing · RumooEV',
-    description:
-      'A fully managed electric fleet today — a company-owned asset tomorrow. 24-month Lease-to-Own, deployed pan-India in 15–20 days.',
-  },
-};
+  description,
+  path: '/business',
+  ogTitle: 'Enterprise Fleet Leasing · RumooEV',
+  ogDescription:
+    'A fully managed electric fleet today — a company-owned asset tomorrow. 24-month Lease-to-Own, deployed pan-India in 15–20 days.',
+});
 
 // BIZ-2 — reuses HOME-2 step copy
 const STEPS = [
@@ -91,6 +95,21 @@ const COMMITMENTS = [
 export default function BusinessPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          webPageSchema({
+            path: '/business',
+            name: 'Enterprise Fleet Leasing (Lease-to-Own)',
+            description,
+          }),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Business', path: '/business' },
+          ]),
+          leaseServiceSchema,
+        ]}
+      />
+
       {/* BIZ-1 — Hero */}
       <PageHero
         eyebrow="For Businesses"

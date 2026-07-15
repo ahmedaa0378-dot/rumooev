@@ -10,17 +10,21 @@ import { Reveal, RevealGroup, RevealItem } from '@/components/Reveal';
 import { IMAGES } from '@/lib/images';
 import type { ImageAsset } from '@/lib/images';
 import { cn } from '@/lib/utils';
+import { JsonLd } from '@/components/JsonLd';
+import { pageMetadata } from '@/lib/seo';
+import { webPageSchema, breadcrumbSchema, scooterProductSchema } from '@/lib/schema';
 
-export const metadata: Metadata = {
+const description =
+  'Three electric scooters for last-mile delivery — Rumoo Lite, HS and Ultra. 40 km/h, 80–100 km range, 1.8 kWh swappable battery, 180 kg loading capacity.';
+
+export const metadata: Metadata = pageMetadata({
   title: 'The Fleet — Rumoo Lite, HS & Ultra',
-  description:
-    'Three electric scooters built for last-mile delivery: Rumoo Lite and HS for business fleets, the Ultra for riders. 40 km/h, 80–100 km range, 1.8 kWh swappable battery, 180 kg loading capacity.',
-  openGraph: {
-    title: 'The Fleet · RumooEV',
-    description:
-      'Rumoo Lite, HS and Ultra — built for efficiency, designed for deliveries. One shared spec sheet, swappable batteries, no charging downtime.',
-  },
-};
+  description,
+  path: '/scooters',
+  ogTitle: 'The Fleet · RumooEV',
+  ogDescription:
+    'Rumoo Lite, HS and Ultra — built for efficiency, designed for deliveries. One shared spec sheet, swappable batteries, no charging downtime.',
+});
 
 // SCT-2 — model showcase, verbatim from CONTENT.md.
 const MODELS: {
@@ -68,6 +72,23 @@ const USE_CASES = [
 export default function ScootersPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          webPageSchema({
+            path: '/scooters',
+            name: 'The Fleet — Rumoo Lite, HS & Ultra',
+            description,
+          }),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Scooters', path: '/scooters' },
+          ]),
+          ...MODELS.map((m) =>
+            scooterProductSchema({ name: m.name, image: m.asset.src, description: m.copy }),
+          ),
+        ]}
+      />
+
       {/* SCT-1 — Hero */}
       <PageHero
         eyebrow="The fleet"

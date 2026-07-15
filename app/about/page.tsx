@@ -4,17 +4,21 @@ import { PageHero } from '@/components/PageHero';
 import { SectionHeading } from '@/components/SectionHeading';
 import { CTABand } from '@/components/CTABand';
 import { Reveal, RevealGroup, RevealItem } from '@/components/Reveal';
+import { JsonLd } from '@/components/JsonLd';
+import { pageMetadata } from '@/lib/seo';
+import { webPageSchema, breadcrumbSchema } from '@/lib/schema';
 
-export const metadata: Metadata = {
+const description =
+  "RumooEV is a fleet partner, not a manufacturer — we deploy electric scooters to businesses on a 24-month Lease-to-Own program and manage everything.";
+
+export const metadata: Metadata = pageMetadata({
   title: 'About RumooEV',
-  description:
-    "RumooEV is not a scooter manufacturer — we're a fleet partner. We deploy electric scooters to businesses on a 24-month Lease-to-Own program and manage everything for one predictable monthly cost. Offices in Gujarat and Telangana, operations pan-India.",
-  openGraph: {
-    title: 'About · RumooEV',
-    description:
-      "Accelerating enterprise electric mobility in India — deploy EV fleets without heavy upfront investment.",
-  },
-};
+  description,
+  path: '/about',
+  ogTitle: 'About · RumooEV',
+  ogDescription:
+    'Accelerating enterprise electric mobility in India — deploy EV fleets without heavy upfront investment.',
+});
 
 const OFFICES = [
   { region: 'Gujarat', note: 'Registered office & operations' },
@@ -24,6 +28,16 @@ const OFFICES = [
 export default function AboutPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          webPageSchema({ path: '/about', name: 'About RumooEV', description }),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'About', path: '/about' },
+          ]),
+        ]}
+      />
+
       {/* ABT-1 — Mission & vision */}
       <PageHero
         eyebrow="About RumooEV"

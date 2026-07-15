@@ -10,17 +10,21 @@ import { Button } from '@/components/Button';
 import { Reveal, RevealGroup, RevealItem } from '@/components/Reveal';
 import { IMAGES } from '@/lib/images';
 import { RIDER_FAQ } from '@/lib/faq';
+import { JsonLd } from '@/components/JsonLd';
+import { pageMetadata } from '@/lib/seo';
+import { webPageSchema, breadcrumbSchema, faqPageSchema } from '@/lib/schema';
 
-export const metadata: Metadata = {
+const description =
+  'Delivery riders: rent the Rumoo Ultra from ₹260/day. 80–100 km range, swappable battery, and maintenance and breakdown support included.';
+
+export const metadata: Metadata = pageMetadata({
   title: 'Ride with Rumoo — Rent the Ultra from ₹260/day',
-  description:
-    'Delivery riders: rent the Rumoo Ultra from ₹260/day. 80–100 km range, swappable battery with no charging downtime, and maintenance and breakdown support included. Pay as you earn.',
-  openGraph: {
-    title: 'Ride with Rumoo · Rent the Ultra',
-    description:
-      'Your scooter. Your earnings. From ₹260 a day — battery swaps, maintenance and support included.',
-  },
-};
+  description,
+  path: '/riders',
+  ogTitle: 'Ride with Rumoo · Rent the Ultra',
+  ogDescription:
+    'Your scooter. Your earnings. From ₹260 a day — battery swaps, maintenance and support included.',
+});
 
 // RID-2
 const WHY = [
@@ -65,6 +69,21 @@ const BOOKING_FIELDS: LeadField[] = [
 export default function RidersPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          webPageSchema({
+            path: '/riders',
+            name: 'Ride with Rumoo — Rent the Ultra',
+            description,
+          }),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Riders', path: '/riders' },
+          ]),
+          faqPageSchema(RIDER_FAQ),
+        ]}
+      />
+
       {/* RID-1 — Hero */}
       <PageHero
         eyebrow="For Riders"
