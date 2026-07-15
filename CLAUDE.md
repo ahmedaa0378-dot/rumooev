@@ -1,13 +1,13 @@
-# CLAUDE.md — Rumoo.ev Website
+# CLAUDE.md — RumooEV Website
 
 This file governs everything you build in this repository. Read it fully before writing any code. When in doubt, follow this file over your own defaults.
 
 ## What this project is
 
-Rumoo.ev is a pan-India Enterprise EV Fleet Lease-to-Own platform with offices in Gujarat and Telangana. It is NOT an EV manufacturer. Two business lines:
+RumooEV is a pan-India Enterprise EV Fleet Lease-to-Own platform with offices in Gujarat and Telangana. It is NOT an EV manufacturer. Two business lines:
 
 1. **B2B (primary):** Businesses lease electric scooters (models: Rumoo HS, Rumoo Lite) on a 24-month Lease-to-Own plan. After 24 months, 100% ownership transfers to the customer. This ownership transfer is the core differentiator — every page should reinforce it.
-2. **B2C (secondary):** Individual riders (gig/delivery workers) book the Rumoo Ultra on daily rental plans from ₹200/day.
+2. **B2C (secondary):** Individual riders (gig/delivery workers) book the Rumoo Ultra on daily rental plans from ₹260/day.
 
 Primary audience: fleet procurement decision-makers at quick commerce, food delivery, logistics, and e-commerce companies. Secondary audience: individual delivery riders.
 
@@ -70,7 +70,7 @@ Build these as reusable components in `/components`: `Button` (primary green, se
 2. **Never display motor wattage.** Specs shown are only: 40 km/h top speed, 80–100 km range, 1.8 kWh swappable lithium-ion battery, 180 kg loading capacity, 70 kg vehicle weight, tubeless tyres, anti-theft alarm, keyless entry, USB charging, digital display.
 3. **Never invent savings figures, client names, testimonials, or fleet-size statistics.** Use only numbers provided in CONTENT.md.
 4. All three models share the same published spec sheet. Do not fabricate spec differences between Lite, HS, and Ultra.
-5. B2C pricing is shown only as "from ₹200/day". Never show a full B2C rate card.
+5. B2C pricing is shown only as "from ₹260/day". Never show a full B2C rate card.
 6. B2B pricing tiers are public and shown exactly as listed in CONTENT.md. Always note "GST extra" and "Battery swapping optional, charged separately".
 7. Tone: confident, plain, specific. No buzzwords ("revolutionize", "seamless", "cutting-edge", "unleash"). Short sentences. Numbers over adjectives.
 8. Currency format: ₹5,500 (Indian grouping: ₹1,32,000). Use the ₹ symbol, never "Rs." or "INR" in display copy.
@@ -78,8 +78,8 @@ Build these as reusable components in `/components`: `Button` (primary green, se
 ## Contact details (use exactly these)
 
 - Phone/WhatsApp: +91 90990 95698
-- Email: info@rumoo.ev
-- Website: www.rumoo.ev
+- Email: business@rumooev.com
+- Website: www.rumooev.com
 - Offices: Gujarat & Telangana · Pan-India operations
 
 ## Code standards

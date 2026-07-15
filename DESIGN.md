@@ -1,4 +1,4 @@
-# DESIGN.md — Rumoo.ev Visual Design Specification
+# DESIGN.md — RumooEV Visual Design Specification
 
 This file is the authority on how the site looks and feels. CLAUDE.md summarizes the design system; where detail differs, DESIGN.md wins. The goal: a site that reads like Tesla/Stripe built an Indian enterprise mobility brand — white, precise, confident — with one memorable signature moment.
 

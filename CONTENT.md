@@ -1,4 +1,4 @@
-# CONTENT.md — Rumoo.ev Website Copy
+# CONTENT.md — RumooEV Website Copy
 
 Implement this copy verbatim. Section IDs match SITEMAP.md. Do not add adjectives, buzzwords, or claims not present here.
 
@@ -13,8 +13,8 @@ Implement this copy verbatim. Section IDs match SITEMAP.md. Do not add adjective
   - For Businesses: Lease-to-Own · Pricing · Deployment · Service Policy
   - For Riders: Ride with Rumoo · Book a Scooter · Rider FAQ
   - Company: About · Scooters · Contact
-  - Contact: +91 90990 95698 · info@rumoo.ev · Gujarat & Telangana · Pan-India operations
-- Legal line: © 2026 Rumoo.ev. All prices exclusive of GST. Battery swapping services optional and billed separately.
+  - Contact: +91 90990 95698 · business@rumooev.com · Gujarat & Telangana · Pan-India operations
+- Legal line: © 2026 RumooEV. All prices exclusive of GST. Battery swapping services optional and billed separately.
 - Floating WhatsApp button label (tooltip): Chat with us
 
 ---
@@ -38,7 +38,7 @@ Implement this copy verbatim. Section IDs match SITEMAP.md. Do not add adjective
 
 **HOME-3 Two audiences**
 - Card A — For Businesses: Enterprise fleets from 50 scooters. Lease-to-Own, fully managed, deployed pan-India. → Explore fleet leasing
-- Card B — For Riders: Deliver on your own terms. Rent the Rumoo Ultra from ₹200/day, battery swaps and maintenance included. → Ride with Rumoo
+- Card B — For Riders: Deliver on your own terms. Rent the Rumoo Ultra from ₹260/day, battery swaps and maintenance included. → Ride with Rumoo
 
 **HOME-4 Stats band** (animated counters)
 - 24 months — to full ownership
@@ -133,7 +133,7 @@ Implement this copy verbatim. Section IDs match SITEMAP.md. Do not add adjective
 
 **RID-1 Hero**
 - Eyebrow: FOR RIDERS
-- H1: Your scooter. Your earnings. From ₹200 a day.
+- H1: Your scooter. Your earnings. From ₹260 a day.
 - Subline: Rent the Rumoo Ultra and start delivering — battery swaps, maintenance and support are on us.
 - CTA: Book Your Scooter
 
@@ -141,7 +141,7 @@ Implement this copy verbatim. Section IDs match SITEMAP.md. Do not add adjective
 - Go further: 80–100 km on a single charge at delivery pace — 40 km/h.
 - Never wait to charge: Swappable battery. Swap in minutes and get back on the road.
 - Zero maintenance worries: Servicing, repairs and breakdown support included.
-- Simple daily pricing: Plans from ₹200/day. Pay as you earn.
+- Simple daily pricing: Plans from ₹260/day. Pay as you earn.
 
 **RID-3 How it works**
 - 1. Enquire: Fill the form or WhatsApp us.
@@ -156,7 +156,7 @@ Implement this copy verbatim. Section IDs match SITEMAP.md. Do not add adjective
 
 **RID-5 Rider FAQ**
 - Q: What documents do I need? — A: A valid driving licence and standard KYC documents (Aadhaar/PAN). Our team will guide you through verification.
-- Q: What does ₹200/day include? — A: The scooter, maintenance, and breakdown support. Final plan pricing depends on your city and rental duration — we'll confirm before you book.
+- Q: What does ₹260/day include? — A: The scooter, maintenance, and breakdown support. Final plan pricing depends on your city and rental duration — we'll confirm before you book.
 - Q: How does battery swapping work? — A: The Ultra runs on a swappable battery. Swap a low battery for a charged one at a partner point in minutes.
 - Q: What if the scooter breaks down? — A: Call or WhatsApp our support line. Breakdown assistance is included with every plan.
 - Q: Which cities are you in? — A: We operate pan-India with offices in Gujarat and Telangana. Tell us your city in the form and we'll confirm availability.
@@ -173,7 +173,7 @@ Implement this copy verbatim. Section IDs match SITEMAP.md. Do not add adjective
 **SCT-2 Model showcase**
 - Rumoo Lite — badge: FOR BUSINESS FLEETS. Copy: The workhorse of enterprise fleets. Compact, dependable, and built for all-day last-mile duty. CTA: Plan a fleet →
 - Rumoo HS — badge: FOR BUSINESS FLEETS. Copy: Sharper styling, same fleet-grade reliability. Built for teams that ride hard every shift. CTA: Plan a fleet →
-- Rumoo Ultra — badge: FOR RIDERS. Copy: The rider's scooter. Available on daily plans from ₹200/day, with battery swaps and maintenance included. CTA: Ride with Rumoo →
+- Rumoo Ultra — badge: FOR RIDERS. Copy: The rider's scooter. Available on daily plans from ₹260/day, with battery swaps and maintenance included. CTA: Ride with Rumoo →
 
 **SCT-3 Specifications (all models)**
 - Top Speed: 40 km/h
@@ -227,7 +227,7 @@ Implement this copy verbatim. Section IDs match SITEMAP.md. Do not add adjective
 - Disclaimer: All values are estimates, exclusive of GST. Actual figures depend on usage, routes and deployment location.
 
 **PRC-4 Rider teaser**
-- Riding solo? The Rumoo Ultra is available on daily plans from ₹200/day. → Ride with Rumoo
+- Riding solo? The Rumoo Ultra is available on daily plans from ₹260/day. → Ride with Rumoo
 
 **PRC-5 Pricing FAQ**
 - Q: What happens after 24 months? — A: Ownership of every scooter in your fleet is transferred to your company, at no additional cost. The fleet becomes your asset.
@@ -287,13 +287,13 @@ Implement this copy verbatim. Section IDs match SITEMAP.md. Do not add adjective
 ## `/about`
 
 **ABT-1**
-- Eyebrow: ABOUT RUMOO.EV
+- Eyebrow: ABOUT RUMOOEV
 - H1: Electric mobility, without the barriers.
 - Mission: Accelerate enterprise electric mobility in India by helping businesses deploy EV fleets without heavy upfront investment.
 - Vision: Become India's largest Enterprise EV Fleet Lease-to-Own platform.
 
 **ABT-2 What we do**
-- Rumoo.ev is not a scooter manufacturer. We're a fleet partner. We buy electric scooters, deploy them to businesses on a 24-month Lease-to-Own program, and manage everything — maintenance, insurance, support — for one predictable monthly cost. When the lease ends, the fleet belongs to our customer. For individual riders, we offer the Rumoo Ultra on simple daily plans.
+- RumooEV is not a scooter manufacturer. We're a fleet partner. We buy electric scooters, deploy them to businesses on a 24-month Lease-to-Own program, and manage everything — maintenance, insurance, support — for one predictable monthly cost. When the lease ends, the fleet belongs to our customer. For individual riders, we offer the Rumoo Ultra on simple daily plans.
 
 **ABT-3 Presence**
 - Title: Pan-India operations.
@@ -311,7 +311,7 @@ Implement this copy verbatim. Section IDs match SITEMAP.md. Do not add adjective
 **CON-1**
 - H1: Let's talk fleets.
 - Line: Tell us about your operation and we'll come back with a plan — usually within one business day.
-- Details: Call or WhatsApp: +91 90990 95698 · Email: info@rumoo.ev · Offices: Gujarat & Telangana
+- Details: Call or WhatsApp: +91 90990 95698 · Email: business@rumooev.com · Offices: Gujarat & Telangana
 - Form reason options: Book a Pilot · Fleet Enquiry · Rider Booking · Partnership · Other
 - Button: Send Message
 - Success: Message received. Our team will reach out within one business day.

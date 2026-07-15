@@ -1,4 +1,4 @@
-# SITEMAP.md — Rumoo.ev Website Structure
+# SITEMAP.md — RumooEV Website Structure
 
 Routes, section-by-section page layouts, and functional specs. Copy for every section is in CONTENT.md — reference by section ID (e.g. `HOME-1`).
 
@@ -45,7 +45,7 @@ Footer: four columns — For Businesses / For Riders / Company / Contact — plu
 
 ### `/riders`
 1. **RID-1 Hero** — energetic but on-brand. Ultra image. CTA: "Book Your Scooter" → anchors to RID-4 form.
-2. **RID-2 Why ride Rumoo** — 4 cards: earn more (40 km/h, 80–100 km range), swappable battery (no charging downtime), maintenance covered, plans from ₹200/day.
+2. **RID-2 Why ride Rumoo** — 4 cards: earn more (40 km/h, 80–100 km range), swappable battery (no charging downtime), maintenance covered, plans from ₹260/day.
 3. **RID-3 How it works** — 3-step: enquire → verify documents → ride.
 4. **RID-4 Booking form** — LeadForm variant: name, phone, city, preferred model (fixed: Ultra), start date. Submits to /api/lead with `type: "rider"`. Success state: "We'll WhatsApp you within 24 hours."
 5. **RID-5 FAQ** — rider-specific accordion.
@@ -61,7 +61,7 @@ Footer: four columns — For Businesses / For Riders / Company / Contact — plu
 1. **PRC-1 Hero** — "Flexible plans. Maximum value."
 2. **PRC-2 B2B pricing table** — 6 fleet-size tiers × weekly + monthly rates. Footnotes: GST extra; battery swapping optional/extra; 5,000+ = custom enterprise pricing. Every-plan-includes badge strip below.
 3. **PRC-3 Savings Calculator** — interactive (spec below).
-4. **PRC-4 Rider pricing teaser** — one card: "Riding solo? Plans from ₹200/day" → /riders.
+4. **PRC-4 Rider pricing teaser** — one card: "Riding solo? Plans from ₹260/day" → /riders.
 5. **PRC-5 FAQ** — pricing/commercial accordion (with FAQ JSON-LD).
 6. **PRC-6 CTA band** — "Get a custom proposal."
 
