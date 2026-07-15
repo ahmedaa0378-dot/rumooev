@@ -1,0 +1,14 @@
+# RumooEV
+
+> Enterprise EV Fleet Lease-to-Own platform in India. Businesses lease electric delivery scooters (Rumoo Lite, Rumoo HS) on a 24-month plan that ends in 100% company ownership; individual delivery riders rent the Rumoo Ultra on daily plans. Offices in Gujarat and Telangana, operations pan-India.
+
+## Pages
+
+- [Home](https://www.rumooev.com/): Overview of RumooEV's Lease-to-Own model, the fleet, target industries, and 15–20 day deployment.
+- [Business — Enterprise Fleet Leasing](https://www.rumooev.com/business): The 24-month Lease-to-Own program — what's included, commercial terms, deployment timeline, and service commitments.
+- [Riders](https://www.rumooev.com/riders): Rent the Rumoo Ultra from ₹260/day with battery swaps, maintenance and support included; book online.
+- [Scooters](https://www.rumooev.com/scooters): The three models (Lite, HS, Ultra) and the shared spec sheet — 40 km/h, 80–100 km range, 1.8 kWh swappable battery, 180 kg loading capacity.
+- [Pricing](https://www.rumooev.com/pricing): Transparent per-scooter Lease-to-Own pricing across six fleet-size tiers, a savings calculator, and pricing FAQs.
+- [Why Rumoo](https://www.rumooev.com/why-rumoo): Lease-vs-buy comparison, the service and replacement policy, and sustainability benefits.
+- [About](https://www.rumooev.com/about): RumooEV as a fleet partner (not a manufacturer) and its pan-India presence.
+- [Contact](https://www.rumooev.com/contact): Reach the team for a fleet pilot, pricing, or a rider booking — phone, WhatsApp, email, and a contact form.
