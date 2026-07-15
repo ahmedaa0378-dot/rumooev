@@ -127,16 +127,46 @@ const SHARED_SPECS = [
   { '@type': 'PropertyValue', name: 'Loading capacity', value: '180 kg' },
 ] as const;
 
-export function scooterProductSchema(opts: { name: string; image: string; description: string }) {
+const LEASE_OUT = 'http://purl.org/goodrelations/v1#LeaseOut';
+
+// B2B fleet leasing: 6 fleet-size tiers, ₹4,500–₹5,500 per scooter per month.
+const FLEET_LEASE_OFFER = {
+  '@type': 'AggregateOffer',
+  priceCurrency: 'INR',
+  lowPrice: '4500',
+  highPrice: '5500',
+  offerCount: '6',
+  availability: 'https://schema.org/InStock',
+  businessFunction: LEASE_OUT,
+  seller: { '@id': ORG_ID },
+};
+
+// B2C rider rental: from ₹260/day.
+const RIDER_RENTAL_OFFER = {
+  '@type': 'Offer',
+  priceCurrency: 'INR',
+  price: '260',
+  availability: 'https://schema.org/InStock',
+  businessFunction: LEASE_OUT,
+  seller: { '@id': ORG_ID },
+};
+
+export function scooterProductSchema(opts: {
+  name: string;
+  image: string;
+  description: string;
+  audience: 'business' | 'rider';
+}) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: opts.name,
     image: `${SITE.url}${opts.image}`,
     description: opts.description,
-    brand: { '@type': 'Brand', name: 'Rumoo' },
+    brand: { '@type': 'Brand', name: 'RumooEV' },
     category: 'Electric delivery scooter',
     additionalProperty: SHARED_SPECS.map((s) => ({ ...s })),
+    offers: opts.audience === 'rider' ? RIDER_RENTAL_OFFER : FLEET_LEASE_OFFER,
   };
 }
 

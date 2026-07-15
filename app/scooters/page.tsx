@@ -84,7 +84,12 @@ export default function ScootersPage() {
             { name: 'Scooters', path: '/scooters' },
           ]),
           ...MODELS.map((m) =>
-            scooterProductSchema({ name: m.name, image: m.asset.src, description: m.copy }),
+            scooterProductSchema({
+              name: m.name,
+              image: m.asset.src,
+              description: m.copy,
+              audience: m.badge === 'For riders' ? 'rider' : 'business',
+            }),
           ),
         ]}
       />
